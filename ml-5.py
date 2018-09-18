@@ -1,10 +1,8 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
 """
-Created on Mon Sep 17 07:56:04 2018
-pythonによる機械学習入門のp44 
-tree
-@author: natsu
+Created on Tue Sep 18 12:19:32 2018
+randomeForest
+@author: SSG_Share_1
 """
 
 import numpy as np
@@ -27,14 +25,14 @@ images = images.reshape(images.shape[0],-1)
 
 
 #
-from sklearn import tree
-from sklearn.tree import DecisionTreeClassifier
+from sklearn import ensemble
+#from sklearn.tree import DecisionTreeClassifier
 
 n_samples = len(flag[flag])
 
 train_size = int(n_samples*3/5)
 
-classifier = tree.DecisionTreeClassifier(max_depth=10) #make a classifier
+classifier = ensemble.RandomForestClassifier(n_estimators=20,max_depth=3,criterion="gini")
 digits = datasets.load_digits()#data
 #print(digits.data)#see
 
